@@ -1,1 +1,32 @@
+import java.util.Scanner;
+
+public class fifth {
+    // Time Complexity: O(2^n)
+    public static long fib(long num) {
+        if (num <= 1)
+            return num;
+        else
+            return fib(num - 1) + fib(num - 2);
+    }
+    // Time Complexity: O(2^n)
+
+    public static void test1() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the number:");
+        long num = scanner.nextInt();
+        long ans = fib(num);
+        System.out.println("Answer: " + ans);
+    }
+
+    // Time Complexity: O(2^n)
+    public static void test2() {
+        long num = 4;
+        long ans = fib(num);
+        System.out.println("Answer: " + ans);
+    }
+
+    public static void main(String[] args) {
+        test2();
+    }
+}
 
