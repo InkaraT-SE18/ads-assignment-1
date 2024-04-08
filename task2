@@ -1,1 +1,42 @@
+import java.util.Scanner;
+public class second {
+    //Time Complexity: 0(n) -Linear Function
+    public static double Average (double[] arr){
+        return Sum(arr,0)/ arr.length;
+    }
+    public static double Sum(double[] arr, int index){
+        if (index == arr.length -1){
+            return arr[index];
+
+        }
+        return arr[index]+Sum(arr, index+1);
+
+    }
+    //linear function 0(n)
+    
+
+    public static void Test1(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of elemnts: ");
+        int num= scanner.nextInt();
+        double[] numbers = new double[num];
+        for(int i=0; i<num; i++){
+            numbers[i] =scanner.nextDouble();
+
+        }
+        double average = Average(numbers);
+        System.out.println("average;"+average);
+    }
+    // costant b- 0(1)
+    public static void Test2(){
+        int num=5;
+        double[] numbers={1, 6, 7,3, 10};
+        double average = Average(numbers);
+        System.out.println("Average:"+ average);
+
+        }
+    public static void main (String[] args){
+        Test2();
+    }
+}
 
