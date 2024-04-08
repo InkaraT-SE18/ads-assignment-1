@@ -1,1 +1,35 @@
+import java.util.Scanner;
+// Linear function -0(n)
+public class Forth {
+    public static long factorial(long num){
+        return solve_Factorial(num,1);
+
+    }
+    public static long solve_Factorial(long num,long counter ){
+        if (num>1){
+            counter *= num;
+            return solve_Factorial(num-1, counter);
+
+        }
+        return counter;
+    }
+
+
+
+    public static void test1(){
+        Scanner scanner = new Scanner(System.in);
+        int num = scanner.nextInt();
+        long ans = factorial(num);
+        System.out.println("Answer:"+ ans );
+
+    }
+    public static void test2(){
+        int num = 6;
+        long ans=factorial(num);
+        System.out.println("Answer:"+ ans );
+    }
+    public static void main(String[] args){
+        test2();
+    }
+}
 
