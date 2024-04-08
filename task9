@@ -1,1 +1,31 @@
+import java.util.*;
+public class tenth {
+    //  O(log(min(a, b)))
+    public static int euc_algorithm(int first, int second){
+        if( first == 0 )
+            return second;
+        else
+            return euc_algorithm(second % first, first);
+        }
+        // Time Complexity: O(log(min(a, b))), where a and b are the fixed inputs.
+        public static void test1(){
+            int a =15;
+            int b =22;
+            int result = euc_algorithm(a, b);
+
+        }
+        public static void test2(){
+            int a = 18;
+            int b = 9;
+            int result = euc_algorithm(a, b);
+            System.out.println("The ans:"+result);
+
+
+    }
+        public static void main(String[] args){
+        test2();
+        }
+
+
+}
 
