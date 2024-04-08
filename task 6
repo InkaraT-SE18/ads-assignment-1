@@ -1,1 +1,39 @@
+import java.util.Scanner;
+
+public class sixth {
+
+    public static long term(int num, int n) {
+        if (n == 0)
+            return 1;
+        else
+            return num * term(num, n - 1);
+
+    }
+
+    // Time Complexity: O(n)
+    public static void test1() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the numbers: ");
+        int num = scanner.nextInt();
+        System.out.println("Enter the n term: ");
+        int n= scanner.nextInt();
+        long result = term(num,n);
+        System.out.println("answer:" + result);
+
+    }
+
+    // Time Complexity: O(n)
+    public static void test2() {
+        int num = 3;
+        int n = 10;
+        long result = term(num, n);
+        System.out.println("answer:" + result);
+
+    }
+
+    public static void main(String[] args) {
+        test1();
+    }
+
+}
 
