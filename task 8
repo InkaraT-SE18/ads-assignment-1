@@ -1,1 +1,36 @@
+import java.util.*;
+
+public class eight {
+    public static boolean all_Digits(String s){
+        if (s.isEmpty())
+            return true;
+        if (Character.isDigit(s.charAt(0))) {
+            return all_Digits(s.substring(1)); // beginning index
+        } else {
+            return false;
+        }
+    }
+
+    // Time Complexity: O(1)
+    public static void test1(){
+        String s1= "563";
+        String s2= "id895";
+        System.out.println(s1+":"+(all_Digits(s1) ? "yes": "No"));
+        System.out.println(s2+":"+(all_Digits(s2) ? "yes": "No"));
+
+    }
+    //  Time Complexity: O(n)
+    public static void test2(){
+        Scanner scanner = new Scanner(System.in);
+        String s1 =scanner.nextLine();
+        System.out.println(s1+":"+(all_Digits(s1) ? "yes": "No"));
+
+
+    }
+    public static void main(String[] args){
+        test2();
+
+    }
+
+    }
 
