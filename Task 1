@@ -1,0 +1,36 @@
+import java.util.Scanner;
+// linear function 0(n)
+public class first {
+    public static long findMinVal(long[] numbers, int length, int index) {
+        if (index == length - 1) {
+            return numbers[index];
+        }
+        long minimum = findMinVal(numbers, length, index + 1);
+        if (numbers[index] < minimum) {
+            return numbers[index];
+        } else {
+            return minimum;
+        }
+    }
+    public static void Test1(){
+        Scanner sc = new Scanner(System.in);
+        int num =sc.nextInt();
+        long[] numbers = new long[num];
+        for(int i=0; i<num; i++){
+            numbers[i]=sc.nextLong();
+
+        }
+        long minimum =findMinVal(numbers, num, 0);
+        System.out.println("The min value of the list is:"+ minimum);
+    }
+    public static void Test2(){
+        int num = 5;
+        long[] numbers ={ 20, 17, -90, -696, -1};
+        long minimum = findMinVal(numbers, num, 0);
+        System.out.println("The minimum value of the list is:"+ minimum);
+
+    }
+    public static void main(String[] args ){
+        Test2();
+    }
+}
