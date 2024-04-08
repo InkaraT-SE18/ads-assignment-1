@@ -1,1 +1,29 @@
+import java.util.*;
 
+public class ninth {
+    // Time Complexity: O(2^n)
+    public static  int binom(int n, int k) {
+
+        if (k > n) {
+            return 0;
+        }
+        if (k == 0 || k == n) {
+            return 1;
+        }
+        return binom(n-1, k-1) + binom(n-1, k);
+
+    }
+    // Time Complexity: O(1)
+    public static void test1(){
+        int n=3;
+        int k=5;
+        int result = binom(n, k);
+        System.out.println("The result is: " + result);
+
+    }
+    public static void main(String[] args){
+        test1();
+    }
+
+
+}
